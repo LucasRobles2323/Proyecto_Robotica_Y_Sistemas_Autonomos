@@ -13,6 +13,12 @@ Se requiere un robot autónomo que pueda recorrer el siguiente laberinto, donde 
 
 ![Propuesta 2](Otros//ImagenesReadme/IdeaProyecto.png)
 
+##### Segunda Entrega Parcial
+
+- EP2.1 Implementar la captura y almacenamiento de los datos de los sensores. (el almacenamiento de los datos puede ser JSON).
+- EP2.2: Realizar diagramas de la propuesta, eso implica considerar aspectos como : (1) la comunicación con la UI, (2) si tiene asignado un robot móvil debe presentar mapa topgráfico. De lo contrario análisis de los movimientos (Cinemática) , (3) Interacció (guión), (4) arquitectura de control.
+- EP2.3: Ubicación de los sensores y actuadores que se requieren en el robot seleccionado (hacer diagrama o tomar foto).
+
 ##### Primera Entrega Parcial
 
 - EP1.1 ¿Qué tipo de robot es? (Justifique).
@@ -24,7 +30,47 @@ Se requiere un robot autónomo que pueda recorrer el siguiente laberinto, donde 
 - EP1.7 ¿Qué sistema embebido usará? (Arduino UNO, Raspberry Pi, Jetson Nano, etc) (Justifique).
 - EP1.8 ¿Qué respuestas de retroalimentación tendrá el robot? (Justifique).
 
-## Respuestas
+## Respuestas Segunda Entrega Parcial
+
+### EP2.1 Implementar la captura y almacenamiento de los datos de los sensores. (el almacenamiento de los datos puede ser JSON).
+
+La implementacion esta presente en la carpeta Codigo_Arduino_Python:
+
+- Existe la carpeta "readDistance", que contiene el arduino que lee la distancia del sensor y la comunica al codigo python.
+- BD.json guarda el json donde se guardan las distancias y las lecturas rgb.
+- saveDistance recibe lo leido en arduino y lo guarda en el json con la estructura correcta.
+
+Para esta implementacion, solo hicimos la captura y almacenamiento de datos del sensor Ultrasonido. Respecto al rgb, todos los guardara como si hubiera recibido rgb(100,30,20).
+
+### EP2.2: Realizar diagramas de la propuesta, eso implica considerar aspectos como : (1) la comunicación con la UI, (2) si tiene asignado un robot móvil debe presentar mapa topgráfico. De lo contrario análisis de los movimientos (Cinemática) , (3) Interacció (guión), (4) arquitectura de control.
+
+
+
+### EP2.3: Ubicación de los sensores y actuadores que se requieren en el robot seleccionado (hacer diagrama o tomar foto).
+
+#### Todos los sensores y actuadores
+![All](Otros//ImagenesReadme/All.png)
+
+#### Bluetooth
+![Bluetooth](Otros//ImagenesReadme/Bluetooth.png)
+
+#### Ruedas
+![Ruedas](Otros//ImagenesReadme/Ruedas.png)
+
+#### RGB
+![RGB](Otros//ImagenesReadme/RGB.png)
+
+#### Servomotor
+![Servomotor](Otros//ImagenesReadme/Servomotor.png)
+
+
+### EP1.4 ¿Cómo se mueve el robot? (Puede existir un dibujo o gráfico)
+
+Solo se desplaza hacia adelante y hacia atrás, puede girar sobre sí mismo hasta 360 grados.
+
+![Robot Movimiento](Otros//ImagenesReadme/MovimientoRobot.png)
+
+## Respuestas Primera Entrega Parcial
 
 ### EP1.1 ¿Qué tipo de robot es? (Justifique).
 
