@@ -33,7 +33,21 @@ Para esta implementacion, solo hicimos la captura y almacenamiento de datos del 
 
 ### EP2.2: Realizar diagramas de la propuesta, eso implica considerar aspectos como : (1) la comunicación con la UI, (2) si tiene asignado un robot móvil debe presentar mapa topgráfico. De lo contrario análisis de los movimientos (Cinemática) , (3) Interacció (guión), (4) arquitectura de control.
 
+- (1) La comunicación con la UI
 
+Diagrama de Componentes:
+
+![Componentes](Otros//ImagenesReadme/D_Componentes.png)
+
+Diagrama de Secuencia:
+
+![ControlRemoto](Otros//ImagenesReadme/ControlRemoto.png)
+
+![SalirLaberinto](Otros//ImagenesReadme/SalirLaberinto.png)
+
+- (2) Mapa topgráfico
+
+![Laberinto](Otros//ImagenesReadme/Laberinto.png)
 
 ### EP2.3: Ubicación de los sensores y actuadores que se requieren en el robot seleccionado (hacer diagrama o tomar foto).
 
