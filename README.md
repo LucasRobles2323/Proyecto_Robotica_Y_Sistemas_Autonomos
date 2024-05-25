@@ -47,7 +47,11 @@ Diagrama de Secuencia:
 
 - (2) Mapa topgráfico
 
+El cuadrado verde es el robot, y el cuadrado rojo es la meta.
+
 ![Laberinto](Otros//ImagenesReadme/Laberinto.png)
+
+![LaberintoHecho](Otros//ImagenesReadme/LaberintoHecho.png)
 
 ### EP2.3: Ubicación de los sensores y actuadores que se requieren en el robot seleccionado (hacer diagrama o tomar foto).
 
