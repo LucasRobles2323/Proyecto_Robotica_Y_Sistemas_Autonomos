@@ -61,11 +61,14 @@ El cuadrado verde es el robot, y el cuadrado rojo es la meta.
 #### Bluetooth
 ![Bluetooth](Otros//ImagenesReadme/Bluetooth.png)
 
-#### Ruedas
-![Ruedas](Otros//ImagenesReadme/Ruedas.png)
-
 #### RGB
 ![RGB](Otros//ImagenesReadme/RGB.png)
+
+#### Ultrasonido
+![Ultrasonido](Otros//ImagenesReadme/Ultrasonido.png.png)
+
+#### Ruedas
+![Ruedas](Otros//ImagenesReadme/Ruedas.png)
 
 #### Servomotor
 ![Servomotor](Otros//ImagenesReadme/Servomotor.png)
