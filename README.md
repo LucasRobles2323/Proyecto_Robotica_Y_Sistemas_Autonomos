@@ -71,7 +71,7 @@ El cuadrado verde es el robot, y el cuadrado rojo es la meta.
 ![RGB](Otros//ImagenesReadme/RGB.png)
 
 #### Ultrasonido
-![Ultrasonido](Otros//ImagenesReadme/Ultrasonido.png.png)
+![Ultrasonido](Otros//ImagenesReadme/Ultrasonido.png)
 
 #### Ruedas
 ![Ruedas](Otros//ImagenesReadme/Ruedas.png)
