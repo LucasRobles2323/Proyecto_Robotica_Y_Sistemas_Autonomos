@@ -27,9 +27,15 @@ La implementacion esta presente en la carpeta Codigo_Arduino_Python:
 
 - Existe la carpeta "readDistance", que contiene el arduino que lee la distancia del sensor y la comunica al codigo python.
 - BD.json guarda el json donde se guardan las distancias y las lecturas rgb.
-- saveDistance recibe lo leido en arduino y lo guarda en el json con la estructura correcta.
+- saveDistance recibe lo leido en arduino en el codigo python y lo guarda en el json con la estructura correcta.
 
 Para esta implementacion, solo hicimos la captura y almacenamiento de datos del sensor Ultrasonido. Respecto al rgb, todos los guardara como si hubiera recibido rgb(100,30,20).
+
+Para que funcione, asegurese de usar los pines puestos en el codigo arduino para trigger y echo, y en python use el mismo 'COMX' que en el arduino. Siendo X un numero entero mayor a uno.
+
+Se debe ejecutar el codigo arduino antes que el codigo python.
+
+El codigo tiene un bucle para que no este guardando datos infinitamente.
 
 ### EP2.2: Realizar diagramas de la propuesta, eso implica considerar aspectos como : (1) la comunicación con la UI, (2) si tiene asignado un robot móvil debe presentar mapa topgráfico. De lo contrario análisis de los movimientos (Cinemática) , (3) Interacció (guión), (4) arquitectura de control.
 
