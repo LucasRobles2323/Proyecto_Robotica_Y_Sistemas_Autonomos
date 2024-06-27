@@ -13,68 +13,82 @@ Se requiere un robot autónomo que pueda recorrer el siguiente laberinto, donde 
 
 ![Propuesta 2](Otros//ImagenesReadme/IdeaProyecto.png)
 
-##### Segunda Entrega Parcial
+##### Entrega Final
 
-- EP2.1 Implementar la captura y almacenamiento de los datos de los sensores. (el almacenamiento de los datos puede ser JSON).
-- EP2.2: Realizar diagramas de la propuesta, eso implica considerar aspectos como : (1) la comunicación con la UI, (2) si tiene asignado un robot móvil debe presentar mapa topgráfico. De lo contrario análisis de los movimientos (Cinemática) , (3) Interacció (guión), (4) arquitectura de control.
-- EP2.3: Ubicación de los sensores y actuadores que se requieren en el robot seleccionado (hacer diagrama o tomar foto).
 
-## Respuestas Segunda Entrega Parcial
+- EF1.1: Implementar un algoritmo, el cual puede ser : localización bayesiana, a*, Dijkstra
+- EF1.2: Puesta en marcha del robot en el escenario propuesto con el algoritmo que permita realizar un comportamiento autónomo.
+- EF1.3: Interfaz de monitoreo.
 
-### EP2.1 Implementar la captura y almacenamiento de los datos de los sensores. (el almacenamiento de los datos puede ser JSON).
+## Respuestas Entrega Final
 
-La implementacion esta presente en la carpeta Codigo_Arduino_Python:
+### EF1.1: Implementar un algoritmo, el cual puede ser : localización bayesiana, a*, Dijkstra
 
-- Existe la carpeta "readDistance", que contiene el arduino que lee la distancia del sensor y la comunica al codigo python.
-- BD.json guarda el json donde se guardan las distancias y las lecturas rgb.
-- saveDistance recibe lo leido en arduino en el codigo python y lo guarda en el json con la estructura correcta.
+Se hizo un algoritmo A* para recorrer el laberinto.
 
-Para esta implementacion, solo hicimos la captura y almacenamiento de datos del sensor Ultrasonido. Respecto al rgb, todos los guardara como si hubiera recibido rgb(100,30,20).
+Este código implementa una solución para encontrar el camino más corto en un laberinto utilizando el algoritmo A* sin heurística. Aquí está el desglose de las partes del código:
 
-Para que funcione, asegurese de usar los pines puestos en el codigo arduino para trigger y echo, y en python use el mismo 'COMX' que en el arduino. Siendo X un numero entero mayor a uno.
+Función crear_laberinto:
 
-Se debe ejecutar el codigo arduino antes que el codigo python.
+- Crea y retorna una representación del laberinto como una lista de listas de caracteres, donde cada carácter representa una celda del laberinto.
+Función a_estrella:
 
-El codigo tiene un bucle para que no este guardando datos infinitamente.
+- Implementa el algoritmo A* para encontrar el camino más corto desde un punto de inicio hasta un punto final en el laberinto.
+- Utiliza una cola de prioridad para explorar las celdas del laberinto y un diccionario para registrar el costo acumulado para llegar a cada celda y el camino seguido.
 
-### EP2.2: Realizar diagramas de la propuesta, eso implica considerar aspectos como : (1) la comunicación con la UI, (2) si tiene asignado un robot móvil debe presentar mapa topgráfico. De lo contrario análisis de los movimientos (Cinemática) , (3) Interacció (guión), (4) arquitectura de control.
+Función mostrar_laberinto:
 
-- (1) La comunicación con la UI
+- Imprime el laberinto en la consola.
+- Función mostrar_laberinto_con_camino:
 
-Diagrama de Componentes:
+Toma el laberinto y el camino encontrado por el algoritmo A*, marca el camino en el laberinto con asteriscos ('*'), y luego imprime el laberinto.
+Ejecución del código:
 
-![Componentes](Otros//ImagenesReadme/D_Componentes.png)
+- Se crea el laberinto y se define el punto de inicio y el punto final.
+- Se muestra el laberinto sin resolver.
+- Se ejecuta el algoritmo A* para encontrar el camino desde el inicio hasta el final.
+- Se muestra el laberinto con el camino resuelto marcado.
+El código proporciona una forma visual y programática de resolver un laberinto utilizando un enfoque algorítmico eficiente.
 
-Diagrama de Secuencia:
 
-![ControlRemoto](Otros//ImagenesReadme/ControlRemoto.png)
 
-![SalirLaberinto](Otros//ImagenesReadme/SalirLaberinto.png)
+### EF1.2: Puesta en marcha del robot en el escenario propuesto con el algoritmo que permita realizar un comportamiento autónomo.
 
-- (2) Mapa topgráfico
+El escenario propuesto se compone de este laberinto: 
 
-El cuadrado verde es el robot, y el cuadrado rojo es la meta.
+![algotimo 2](Otros//imagenesReadme/Screenshot2024-06-26210743.png)
 
-![Laberinto](Otros//ImagenesReadme/Laberinto.png)
+Los asteriscos presentes en el escenario porpuesto representan un comando que el robot recibirá para efectuar un movimiento.
 
-![LaberintoHecho](Otros//ImagenesReadme/LaberintoHecho.png)
+El laberinto solucionado contiene un total de 19 asteriscos, cada uno representando una acción traducida a movmiento en el robot, cada esquina contando como 2 movimientos debido a que debe realizar el movimento hacia adelante para posicionarse en la casilla y luego girarse.
 
-### EP2.3: Ubicación de los sensores y actuadores que se requieren en el robot seleccionado (hacer diagrama o tomar foto).
+9 movimientos frontales, un giro a la izquierda en 90° y 8 movimientos frontales -> 18 movimientos totales
 
-#### Todos los sensores y actuadores
-![All](Otros//ImagenesReadme/All.png)
+Por lo que la sucecsión de acciones sería 
 
-#### Bluetooth
-![Bluetooth](Otros//ImagenesReadme/Bluetooth.png)
+[F,F,F,F,F,F,F,F,L,F,F,F,F,F,F,F,F]
 
-#### RGB
-![RGB](Otros//ImagenesReadme/RGB.png)
+- F: Movimiento frontal
 
-#### Ultrasonido
-![Ultrasonido](Otros//ImagenesReadme/Ultrasonido.png)
+- L: Movimiento en 90° hacia la izquierda
 
-#### Ruedas
-![Ruedas](Otros//ImagenesReadme/Ruedas.png)
+En este ejemplo se usan solo esos movimientos.
 
-#### Servomotor
-![Servomotor](Otros//ImagenesReadme/Servomotor.png)
+Movimeintos del robot 
+
+- F: Movimiento frontal
+
+- L: Movimiento en 90° hacia la izquierda
+
+- R: Movimiento en 90° hacia la derecha
+
+- B: Movimiento hacia atrás
+
+###  EF1.3: Interfaz de monitoreo.
+
+
+Se intento usar la aplicacion movil desarrollada en el curso de Web como interfaz de monitoreo, debido a la naturaleza móvil de la aplicación era necesario tener un sistema que mantuviera el server corriendo de manera no local para así poder conectrase desde dispositivos móviles. Para realizar la conexión se utilizó la plataforma de google cloud para que así el intercambio de datos entre el robot y la página web fuera posible. No fue posible realizar dicha conexión.
+
+Se intentó subir el backend de la página web a google cloud para así poder conectar el robot con la página y que esta recibiera los datos, no fue posible hacer dicha conexión.
+
+
